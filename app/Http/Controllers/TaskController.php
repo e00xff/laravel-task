@@ -55,6 +55,8 @@ class TaskController extends Controller
 //        $task->completed = false;
 //        $task->save();
 
+        session()->flash('success', 'Task created successfully.');
+
         return redirect()->route('tasks.index');
     }
 
@@ -105,6 +107,8 @@ class TaskController extends Controller
 //        $task->description = $data['description'];
 //        $task->save();
 
+        session()->flash('success', 'Task updated successfully.');
+
         return redirect()->route('tasks.index');
     }
 
@@ -117,6 +121,8 @@ class TaskController extends Controller
     public function destroy(Task $task)
     {
         $task->delete();
+
+        session()->flash('success', 'Task deleted successfully.');
 
         return redirect()->route('tasks.index');
     }
