@@ -10,27 +10,27 @@
                 </div>
                 <div class="card-body p-0">
 
-                    <table class="table mb-0">
+                    <table class="table table-hover mb-0">
                         <thead>
                             <tr>
                                 <th scope="col">Title</th>
                                 <th scope="col" class="text-center">Completed</th>
-                                <th scope="col" class="text-center">Created At</th>
                                 <th scope="col" class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
+                        @foreach($tasks as $task)
                             <tr>
-                                <td>Text</td>
-                                <td class="text-center">...</td>
-                                <td class="text-center">...</td>
+                                <td>{{ $task->title }}</td>
+                                <td class="text-center">{{ $task->completed }}</td>
                                 <td class="text-center">
-                                    <a href="{{ route('tasks.show', 1) }}" class="btn btn-dark btn-sm">Show</a>
-                                    <a href="{{ route('tasks.edit', 1) }}" class="btn btn-dark btn-sm">Edit</a>
-                                    <a href="{{ route('tasks.edit', 1) }}" class="btn btn-dark btn-sm">Completed</a>
-                                    <a href="" class="btn btn-danger btn-sm" onclick="confirm('Are you sure to delete?')">Delete</a>
+                                    <a href="{{ route('tasks.show', $task->id) }}" class="btn btn-dark btn-sm"><i class="fa-solid fa-eye"></i></a>
+                                    <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-dark btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a href="{{ route('tasks.destroy', $task->id) }}" class="btn btn-dark btn-sm"><i class="fa-solid fa-check"></i></a>
+                                    <a href="" class="btn btn-danger btn-sm" onclick="confirm('Are you sure to delete?')"><i class="fa-solid fa-xmark"></i></a>
                                 </td>
                             </tr>
+                        @endforeach
                         </tbody>
                     </table>
 
