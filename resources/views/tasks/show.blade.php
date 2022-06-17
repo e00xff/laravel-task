@@ -6,10 +6,10 @@
 
             <div class="card mb-3">
                 <div class="card-header">
-                    first task
+                    {{ $task->title }}
                 </div>
                 <div class="card-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consequatur cumque deleniti eum in inventore nemo optio ut? Ad delectus eaque labore odit reiciendis sed, tempore veniam? Qui, quo, similique.
+                    {!! $task->description !!}
                 </div>
             </div>
 
