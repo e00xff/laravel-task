@@ -37,11 +37,23 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate(request(), [
+            'title' => 'required|min:6|max:50',
+            'description' => 'required'
+        ]);
+
         Task::create([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'completed' => false,
         ]);
+
+//        $data = $request->all();
+//        $task = new Task();
+//        $task->title = $data['title'];
+//        $task->description = $data['description'];
+//        $task->completed = false;
+//        $task->save();
 
         return redirect()->route('tasks.index');
     }

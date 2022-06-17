@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-12">
 
-            <div class="card">
+            <div class="card mb-3">
                 <div class="card-header">
                     New Task
                 </div>
@@ -23,6 +23,16 @@
                     </form>
                 </div>
             </div>
+
+            @if($errors->any())
+                <div class="alert alert-danger">
+                    <ul class="mb-0">
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
         </div>
     </div>
