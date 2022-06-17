@@ -126,4 +126,26 @@ class TaskController extends Controller
 
         return redirect()->route('tasks.index');
     }
+
+    public function completed(Task $task)
+    {
+        $task->update([
+            'completed' => true
+        ]);
+
+        session()->flash('success', 'Task completed.');
+
+        return redirect()->route('tasks.index');
+    }
+
+    public function uncompleted(Task $task)
+    {
+        $task->update([
+           'completed' => false
+        ]);
+
+        session()->flash('message', 'Task uncompleted.');
+
+        return redirect()->route('tasks.index');
+    }
 }
