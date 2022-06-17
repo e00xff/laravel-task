@@ -9,7 +9,8 @@
                     New Task
                 </div>
                 <div class="card-body">
-                    <form action="#" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('tasks.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="mb-3">
                             <label for="title" class="form-label">Task Name</label>
                             <input type="text" class="form-control" id="title" name="title">
@@ -18,7 +19,7 @@
                             <label for="description" class="form-label">Task Description</label>
                             <textarea class="form-control" id="description" name="description" rows="3"></textarea>
                         </div>
-                        <button type="submit" name="submit" class="btn btn-primary btn-sm">Add task</button>
+                        <button type="submit" class="btn btn-primary btn-sm">Add task</button>
                     </form>
                 </div>
             </div>

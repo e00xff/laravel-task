@@ -27,9 +27,9 @@
                                 <td class="text-center">{{ $task->completed }}</td>
                                 <td class="text-center">
                                     <a href="{{ route('tasks.show', $task->id) }}" class="btn btn-dark btn-sm"><i class="fa-solid fa-eye"></i></a>
-{{--                                    <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-dark btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>--}}
-{{--                                    <a href="{{ route('tasks.destroy', $task->id) }}" class="btn btn-dark btn-sm"><i class="fa-solid fa-check"></i></a>--}}
-{{--                                    <a href="" class="btn btn-danger btn-sm" onclick="confirm('Are you sure to delete?')"><i class="fa-solid fa-xmark"></i></a>--}}
+                                    <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-dark btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a href="{{ route('tasks.destroy', $task->id) }}" class="btn btn-dark btn-sm"><i class="fa-solid fa-check"></i></a>
+                                    <a href="" class="btn btn-danger btn-sm" onclick="confirm('Are you sure to delete?')"><i class="fa-solid fa-xmark"></i></a>
                                 </td>
                             </tr>
                         @empty

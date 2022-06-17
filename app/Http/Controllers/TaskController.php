@@ -37,7 +37,13 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Task::create([
+            'title' => $request->input('title'),
+            'description' => $request->input('description'),
+            'completed' => false,
+        ]);
+
+        return redirect()->route('tasks.index');
     }
 
     /**
